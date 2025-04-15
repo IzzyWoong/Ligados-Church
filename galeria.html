@@ -26,6 +26,7 @@
       background-color: rgba(0, 0, 0, 0.9);
       justify-content: center;
       align-items: center;
+      flex-direction: column;
     }
     .modal img {
       max-width: 90%;
@@ -43,12 +44,30 @@
       background: rgba(0, 0, 0, 0.5);
       padding: 0.5rem;
       cursor: pointer;
+      user-select: none;
     }
     .modal-prev {
       left: 10px;
     }
     .modal-next {
       right: 10px;
+    }
+    .modal-close {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      font-size: 2rem;
+      color: white;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 0.25rem 0.5rem;
+      cursor: pointer;
+      border-radius: 0.25rem;
+    }
+    .modal-caption {
+      margin-top: 1rem;
+      color: white;
+      font-size: 1.25rem;
+      text-align: center;
     }
   </style>
 </head>
@@ -71,8 +90,9 @@
         <li><a href="galeria.html" class="hover:text-red-500 transition">Galeria</a></li>
         <li><a href="contato.html" class="hover:text-red-500 transition">Contato</a></li>
       </ul>
-    </nav>
-  </header>
+    </div>
+  </nav>
+</header>
 
   <!-- Galeria -->
   <main class="pt-32 px-4 max-w-7xl mx-auto">
@@ -83,18 +103,20 @@
 
     <!-- Galeria com 6 imagens principais -->
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 galeria-container">
-      <img src="assets/impacto1.jpg" alt="Foto 1" class="rounded-xl shadow-lg w-full h-64 object-cover">
-      <img src="assets/impacto2.jpg" alt="Foto 2" class="rounded-xl shadow-lg w-full h-64 object-cover">
-      <img src="assets/impacto3.jpg" alt="Foto 3" class="rounded-xl shadow-lg w-full h-64 object-cover">
-      <img src="assets/impacto3.jpg" alt="Foto 4" class="rounded-xl shadow-lg w-full h-64 object-cover">
-      <img src="assets/impacto3.jpg" alt="Foto 5" class="rounded-xl shadow-lg w-full h-64 object-cover">
-      <img src="assets/impacto3.jpg" alt="Foto 6" class="rounded-xl shadow-lg w-full h-64 object-cover">
+      <img src="assets/impacto1.jpg" alt="Culto ao ar livre" class="rounded-xl shadow-lg w-full h-64 object-cover">
+      <img src="assets/impacto2.jpg" alt="Louvor com a juventude" class="rounded-xl shadow-lg w-full h-64 object-cover">
+      <img src="assets/impacto3.jpg" alt="Batismos emocionantes" class="rounded-xl shadow-lg w-full h-64 object-cover">
+      <img src="assets/impacto3.jpg" alt="Reunião de oração" class="rounded-xl shadow-lg w-full h-64 object-cover">
+      <img src="assets/impacto3.jpg" alt="Encontro dos jovens" class="rounded-xl shadow-lg w-full h-64 object-cover">
+      <img src="assets/impacto3.jpg" alt="Celebração especial" class="rounded-xl shadow-lg w-full h-64 object-cover">
     </div>
 
   <!-- Modal para imagens -->
   <div id="modal" class="modal">
+    <span class="modal-close">&times;</span>
     <span class="modal-nav modal-prev">&#10094;</span>
     <img id="modal-img" src="" alt="Imagem em destaque">
+    <div id="modal-caption" class="modal-caption"></div>
     <span class="modal-nav modal-next">&#10095;</span>
   </div>
 
@@ -107,20 +129,27 @@
     const images = document.querySelectorAll('.galeria-container img');
     const modal = document.getElementById('modal');
     const modalImg = document.getElementById('modal-img');
+    const modalCaption = document.getElementById('modal-caption');
     const prev = document.querySelector('.modal-prev');
     const next = document.querySelector('.modal-next');
+    const close = document.querySelector('.modal-close');
     let currentIndex = 0;
 
     images.forEach((img, index) => {
       img.addEventListener('click', () => {
         modal.classList.add('active');
         modalImg.src = img.src;
+        modalCaption.textContent = img.alt;
         currentIndex = index;
       });
     });
 
+    close.addEventListener('click', () => {
+      modal.classList.remove('active');
+    });
+
     modal.addEventListener('click', (e) => {
-      if (e.target === modal || e.target === modalImg) {
+      if (e.target === modal) {
         modal.classList.remove('active');
       }
     });
@@ -128,11 +157,13 @@
     prev.addEventListener('click', () => {
       currentIndex = (currentIndex - 1 + images.length) % images.length;
       modalImg.src = images[currentIndex].src;
+      modalCaption.textContent = images[currentIndex].alt;
     });
 
     next.addEventListener('click', () => {
       currentIndex = (currentIndex + 1) % images.length;
       modalImg.src = images[currentIndex].src;
+      modalCaption.textContent = images[currentIndex].alt;
     });
 
     document.addEventListener('keydown', (e) => {
