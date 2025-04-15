@@ -32,34 +32,48 @@
     }
   </style>
 </head>
-<body class="bg-white text-red-800">
+<body class="bg-white text-red-800 overflow-x-hidden">
 
-  <!-- Header fixo no topo -->
+<!-- Header fixo no topo -->
 <header class="bg-black text-white fixed top-0 left-0 w-full z-50 shadow-md">
-  <nav class="flex items-center justify-center max-w-3xl mx-auto px-4 py-4">
-    <div class="flex items-center space-x-8">
-      <!-- Logo -->
-      <div class="flex items-center space-x-2">
-        <img src="assets/logo-ligadoschurch.png" alt="Logo Ligados Church" class="h-10 md:h-16 w-auto">
-      </div>
-
-      <!-- Menu de navegação -->
-      <ul class="hidden md:flex space-x-6 text-lg md:text-xl">
-        <li><a href="index.html" class="hover:text-red-500 transition">Início</a></li>
-        <li><a href="eventos.html" class="hover:text-red-500 transition">Eventos</a></li>
-        <li><a href="impacto.html" class="hover:text-red-500 transition">Impacto</a></li>
-        <li><a href="galeria.html" class="hover:text-red-500 transition">Galeria</a></li>
-        <li><a href="contato.html" class="hover:text-red-500 transition">Contato</a></li>
-      </ul>
+  <nav class="flex items-center justify-between max-w-6xl mx-auto px-4 py-4">
+    <!-- Logo -->
+    <div class="flex items-center space-x-2">
+      <img src="assets/logo-ligadoschurch.png" alt="Logo Ligados Church" class="h-10 md:h-16 w-auto">
     </div>
+    
+    <!-- Menu Desktop -->
+    <ul class="hidden md:flex space-x-6 text-lg md:text-xl">
+      <li><a href="index.html" class="hover:text-red-500 transition">Início</a></li>
+      <li><a href="eventos.html" class="hover:text-red-500 transition">Eventos</a></li>
+      <li><a href="impacto.html" class="hover:text-red-500 transition">Impacto</a></li>
+      <li><a href="galeria.html" class="hover:text-red-500 transition">Galeria</a></li>
+      <li><a href="contato.html" class="hover:text-red-500 transition">Contato</a></li>
+    </ul>
+
+    <!-- Botão do menu mobile -->
+    <button id="menu-toggle" class="md:hidden focus:outline-none">
+      <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+      </svg>
+    </button>
   </nav>
+
+  <!-- Menu Mobile -->
+  <div id="mobile-menu" class="md:hidden bg-black text-white text-center space-y-4 px-6 py-4 hidden">
+    <a href="index.html" class="block hover:text-red-500">Início</a>
+    <a href="eventos.html" class="block hover:text-red-500">Eventos</a>
+    <a href="impacto.html" class="block hover:text-red-500">Impacto</a>
+    <a href="galeria.html" class="block hover:text-red-500">Galeria</a>
+    <a href="contato.html" class="block hover:text-red-500">Contato</a>
+  </div>
+
   <!-- Toast de aviso para mobile -->
   <div id="mobile-toast" class="fixed bottom-6 right-6 bg-black text-white text-sm px-4 py-2 rounded-lg shadow-lg opacity-0 transition-opacity duration-500 pointer-events-none z-50">
     Acessando via dispositivo móvel
   </div>
 </header>
 
-<!-- Main Section -->
 <main class="mt-36 max-w-7xl mx-auto px-4 py-8">
   <!-- Título e subtítulo -->
   <section class="text-center fade-in-up mb-12">
@@ -76,7 +90,7 @@
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-4 fade-in-up">
       <!-- Cards de vídeo -->
       <div class="bg-white rounded-lg shadow-lg overflow-hidden transform transition duration-300 hover:scale-105">
-        <video class="w-full h-60 object-cover" muted loop playsinline data-autoplay>
+        <video class="w-full h-60 object-cover" muted loop playsinline data-autoplay loading="lazy">
           <source src="assets/ligadoschurch-1.mp4" type="video/mp4">
           Seu navegador não suporta o vídeo.
         </video>
@@ -86,7 +100,7 @@
         </div>
       </div>
       <div class="bg-white rounded-lg shadow-lg overflow-hidden transform transition duration-300 hover:scale-105">
-        <video class="w-full h-60 object-cover" muted loop playsinline data-autoplay>
+        <video class="w-full h-60 object-cover" muted loop playsinline data-autoplay loading="lazy">
           <source src="assets/ligadoschurch-2.mp4" type="video/mp4">
           Seu navegador não suporta o vídeo.
         </video>
@@ -96,7 +110,7 @@
         </div>
       </div>
       <div class="bg-white rounded-lg shadow-lg overflow-hidden transform transition duration-300 hover:scale-105">
-        <video class="w-full h-60 object-cover" muted loop playsinline data-autoplay>
+        <video class="w-full h-60 object-cover" muted loop playsinline data-autoplay loading="lazy">
           <source src="assets/batismo.mp4" type="video/mp4">
           Seu navegador não suporta o vídeo.
         </video>
@@ -121,8 +135,8 @@
   </section>
 </main>
 
-<!-- Footer -->
-<div class="flex justify-center space-x-4 mb-4">
+<!-- Redes sociais -->
+<div class="flex justify-center flex-wrap gap-4 mb-4">
   <!-- Instagram -->
   <a href="https://www.instagram.com/ligadoschurch/" target="_blank" class="flex items-center space-x-2 bg-black hover:bg-pink-700 transition text-white px-4 py-2 rounded-lg">
     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
@@ -138,17 +152,18 @@
     <span>WhatsApp Grupo da Igreja</span>
   </a>
 </div>
+
 <footer class="bg-black text-white text-center p-6 mt-16 text-sm">
   <p>&copy; 2025 Ligados Church. Todos os direitos reservados.</p>
 </footer>
 
-<!-- Scripts -->
 <script>
   function scrollCarousel(direction) {
     const carousel = document.getElementById('carousel');
     const scrollAmount = 400;
     carousel.scrollBy({ left: scrollAmount * direction, behavior: 'smooth' });
   }
+
   document.addEventListener('DOMContentLoaded', function () {
     if (window.innerWidth < 768) {
       const toast = document.getElementById('mobile-toast');
@@ -159,9 +174,18 @@
         toast.classList.add('opacity-0');
       }, 4000);
     }
+
+    // autoplay nos vídeos
     document.querySelectorAll('video[data-autoplay]').forEach(video => {
       video.muted = true;
       video.play().catch(err => console.error('Erro ao reproduzir vídeo:', err));
+    });
+
+    // Toggle menu mobile
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    menuToggle.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
     });
   });
 </script>
