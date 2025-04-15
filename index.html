@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ligados Church - Início</title>
+  <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .fade-in-up {
+      animation: fadeInUp 1s ease-out;
+    }
+    .scrollbar-hide::-webkit-scrollbar {
+      display: none;
+    }
+    .scrollbar-hide {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+<body class="bg-white text-red-800">
+
+  <!-- Header fixo no topo -->
+<header class="bg-black text-white fixed top-0 left-0 w-full z-50 shadow-md">
+  <nav class="flex items-center justify-center max-w-3xl mx-auto px-4 py-4">
+    <div class="flex items-center space-x-8">
+      <!-- Logo -->
+      <div class="flex items-center space-x-2">
+        <img src="assets/logo-ligadoschurch.png" alt="Logo Ligados Church" class="h-10 md:h-16 w-auto">
+      </div>
+
+      <!-- Menu de navegação -->
+      <ul class="hidden md:flex space-x-6 text-lg md:text-xl">
+        <li><a href="index.html" class="hover:text-red-500 transition">Início</a></li>
+        <li><a href="eventos.html" class="hover:text-red-500 transition">Eventos</a></li>
+        <li><a href="impacto.html" class="hover:text-red-500 transition">Impacto</a></li>
+        <li><a href="galeria.html" class="hover:text-red-500 transition">Galeria</a></li>
+        <li><a href="contato.html" class="hover:text-red-500 transition">Contato</a></li>
+      </ul>
+    </div>
+  </nav>
+  <!-- Toast de aviso para mobile -->
+  <div id="mobile-toast" class="fixed bottom-6 right-6 bg-black text-white text-sm px-4 py-2 rounded-lg shadow-lg opacity-0 transition-opacity duration-500 pointer-events-none z-50">
+    Acessando via dispositivo móvel
+  </div>
+</header>
+
+<!-- Main Section -->
+<main class="mt-36 max-w-7xl mx-auto px-4 py-8">
+  <!-- Título e subtítulo -->
+  <section class="text-center fade-in-up mb-12">
+    <h1 class="text-3xl sm:text-4xl md:text-6xl font-extrabold text-black mb-4">Seja bem-vindo à Ligados Church</h1>
+    <p class="text-lg sm:text-xl font-medium text-black">Conectando vidas a Cristo, despertando propósitos, transformando gerações.</p>
+    <a href="impacto.html" class="inline-block mt-8 px-6 py-3 bg-red-600 text-white font-semibold rounded-lg hover:bg-red-700 transition shadow-md">
+      Conheça o Impacto!
+    </a>
+  </section>
+
+  <!-- Vídeos -->
+  <section class="mt-12">
+    <h2 class="text-3xl md:text-4xl font-bold text-black mb-8 text-center">Confira Nossos Vídeos</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-4 fade-in-up">
+      <!-- Cards de vídeo -->
+      <div class="bg-white rounded-lg shadow-lg overflow-hidden transform transition duration-300 hover:scale-105">
+        <video class="w-full h-60 object-cover" muted loop playsinline data-autoplay>
+          <source src="assets/ligadoschurch-1.mp4" type="video/mp4">
+          Seu navegador não suporta o vídeo.
+        </video>
+        <div class="p-4 text-center">
+          <h3 class="text-xl font-bold text-black mb-2">Trailer Impacto Jovem</h3>
+          <p class="text-gray-700">Momentos intensos de fé e conexão vividos em nossos cultos jovens.</p>
+        </div>
+      </div>
+      <div class="bg-white rounded-lg shadow-lg overflow-hidden transform transition duration-300 hover:scale-105">
+        <video class="w-full h-60 object-cover" muted loop playsinline data-autoplay>
+          <source src="assets/ligadoschurch-2.mp4" type="video/mp4">
+          Seu navegador não suporta o vídeo.
+        </video>
+        <div class="p-4 text-center">
+          <h3 class="text-xl font-bold text-black mb-2">Ministrações Transformadoras</h3>
+          <p class="text-gray-700">Palavras que tocam o coração e despertam o propósito em Cristo.</p>
+        </div>
+      </div>
+      <div class="bg-white rounded-lg shadow-lg overflow-hidden transform transition duration-300 hover:scale-105">
+        <video class="w-full h-60 object-cover" muted loop playsinline data-autoplay>
+          <source src="assets/batismo.mp4" type="video/mp4">
+          Seu navegador não suporta o vídeo.
+        </video>
+        <div class="p-4 text-center">
+          <h3 class="text-xl font-bold text-black mb-2">Retiro Espiritual</h3>
+          <p class="text-gray-700">Um encontro inesquecível de comunhão, reflexão e renovação espiritual.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Missão e Valores -->
+  <section class="mt-12 text-center">
+    <h2 class="text-3xl md:text-4xl font-bold text-black mb-6">Nossos Valores</h2>
+    <p class="text-lg md:text-xl leading-relaxed text-gray-700 max-w-2xl mx-auto mb-12">
+      Amor, fé, serviço, integridade e compromisso com o Reino. Somos uma igreja que vive a verdade, acolhe o próximo e serve com excelência.
+    </p>
+    <h2 class="text-3xl md:text-4xl font-bold text-black mb-6">Nossa Missão</h2>
+    <p class="text-lg md:text-xl leading-relaxed text-gray-700 max-w-2xl mx-auto">
+      Ser uma família espiritual que inspira pessoas a viverem os propósitos de Deus e impactar a sociedade através do amor de Cristo.
+    </p>
+  </section>
+</main>
+
+<!-- Footer -->
+<div class="flex justify-center space-x-4 mb-4">
+  <!-- Instagram -->
+  <a href="https://www.instagram.com/ligadoschurch/" target="_blank" class="flex items-center space-x-2 bg-black hover:bg-pink-700 transition text-white px-4 py-2 rounded-lg">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5A4.25 4.25 0 0 0 20.5 16.25v-8.5A4.25 4.25 0 0 0 16.25 3.5h-8.5zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 1.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7zm5.25-.75a.75.75 0 1 1 0 1.5.75.75 0 0 1 0-1.5z"/>
+    </svg>
+    <span>Instagram Ligados Church</span>
+  </a>
+  <!-- WhatsApp -->
+  <a href="https://chat.whatsapp.com/7qwPjAWAsYaHWtFO37nkcf" target="_blank" class="flex items-center space-x-2 bg-black hover:bg-green-700 transition text-white px-4 py-2 rounded-lg">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M20.52 3.48A11.93 11.93 0 0 0 12.05 0c-6.63 0-12 5.37-12 12a11.9 11.9 0 0 0 1.61 5.94L0 24l6.25-1.63A11.91 11.91 0 0 0 12.05 24c6.63 0 12-5.37 12-12a11.93 11.93 0 0 0-3.53-8.52z"/>
+    </svg>
+    <span>WhatsApp Grupo da Igreja</span>
+  </a>
+</div>
+<footer class="bg-black text-white text-center p-6 mt-16 text-sm">
+  <p>&copy; 2025 Ligados Church. Todos os direitos reservados.</p>
+</footer>
+
+<!-- Scripts -->
+<script>
+  function scrollCarousel(direction) {
+    const carousel = document.getElementById('carousel');
+    const scrollAmount = 400;
+    carousel.scrollBy({ left: scrollAmount * direction, behavior: 'smooth' });
+  }
+  document.addEventListener('DOMContentLoaded', function () {
+    if (window.innerWidth < 768) {
+      const toast = document.getElementById('mobile-toast');
+      toast.classList.remove('opacity-0');
+      toast.classList.add('opacity-100');
+      setTimeout(() => {
+        toast.classList.remove('opacity-100');
+        toast.classList.add('opacity-0');
+      }, 4000);
+    }
+    document.querySelectorAll('video[data-autoplay]').forEach(video => {
+      video.muted = true;
+      video.play().catch(err => console.error('Erro ao reproduzir vídeo:', err));
+    });
+  });
+</script>
+
+</body>
+</html>

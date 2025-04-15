@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ligados Church - Início</title>
+
+  <!-- Meta Tags para SEO -->
+  <meta name="description" content="Participe dos eventos da Ligados Church e viva momentos de fé, comunhão e transformação.">
+  <meta name="author" content="Ligados Church">
+  <meta name="keywords" content="Igreja, Eventos, Jovens, Casais, Batismo, Conferência Cristã">
+  <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+
+  <!-- Tailwind CDN (uso rápido, para produção prefira build com purge) -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+</head>
+<body class="bg-white text-red-800 pt-24 md:pt-32">
+
+  <!-- Header fixo no topo -->
+  <header class="bg-black text-white fixed top-0 left-0 w-full z-50 shadow-md">
+    <nav class="flex items-center justify-center max-w-3xl mx-auto px-4 py-4">
+      <div class="flex items-center space-x-8">
+
+        <!-- Logo -->
+        <div class="flex items-center space-x-4">
+          <img src="assets/logo-ligadoschurch.png" alt="Logo da Ligados Church" class="h-8 md:h-16 w-auto">
+        </div>
+
+        <!-- Menu de navegação -->
+        <ul class="flex space-x-6 text-lg md:text-xl">
+          <li><a href="index.html" class="hover:text-red-500 transition">Início</a></li>
+          <li><a href="eventos.html" class="hover:text-red-500 transition">Eventos</a></li>
+          <li><a href="impacto.html" class="hover:text-red-500 transition">Impacto</a></li>
+          <li><a href="galeria.html" class="hover:text-red-500 transition">Galeria</a></li>
+          <li><a href="contato.html" class="hover:text-red-500 transition">Contato</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main Section -->
+  <main class="max-w-7xl mx-auto px-4 py-12">
+    <section class="text-center">
+      <h1 class="text-4xl md:text-5xl font-extrabold text-black mb-8">Eventos da Ligados Church</h1>
+      <p class="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto mb-12">
+        Participe dos nossos eventos e viva momentos transformadores. Retiros, cultos especiais, conferências e muito mais para você e sua família.
+      </p>
+
+      <!-- Grid de eventos -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <!-- Evento 1 -->
+        <div class="bg-white rounded-xl shadow-md overflow-hidden border border-gray-200">
+          <img src="assets/impacto1.jpg" alt="Conferência Jovem com louvor e adoração" class="w-full h-48 object-cover">
+          <div class="p-6">
+            <h2 class="text-2xl font-bold text-gray-900 mb-2">Conferência Jovem 2025</h2>
+            <p class="text-gray-700 mb-4">Venha viver dias de avivamento, comunhão e muita presença de Deus.</p>
+            <a href="#" class="inline-block px-4 py-2 bg-black text-white rounded hover:bg-red-700 transition">Em breve...</a>
+          </div>
+        </div>
+
+        <!-- Evento 2 -->
+        <div class="bg-white rounded-xl shadow-md overflow-hidden border border-gray-200">
+          <img src="assets/impacto3.jpg" alt="Casais sorrindo durante retiro da igreja" class="w-full h-48 object-cover">
+          <div class="p-6">
+            <h2 class="text-2xl font-bold text-gray-900 mb-2">Encontro de Casais</h2>
+            <p class="text-gray-700 mb-4">Fortaleça seu relacionamento com Deus e com seu cônjuge.</p>
+            <a href="#" class="inline-block px-4 py-2 bg-black text-white rounded hover:bg-red-700 transition">Em breve...</a>
+          </div>
+        </div>
+
+        <!-- Evento 3 -->
+        <div class="bg-white rounded-xl shadow-md overflow-hidden border border-gray-200">
+          <img src="assets/batismo.jpg" alt="Batismo em rio durante culto ao ar livre" class="w-full h-48 object-cover">
+          <div class="p-6">
+            <h2 class="text-2xl font-bold text-gray-900 mb-2">Batismos 2025</h2>
+            <p class="text-gray-700 mb-4">Celebre com a gente este marco de fé e entrega total.</p>
+            <a href="#" class="inline-block px-4 py-2 bg-black text-white rounded hover:bg-red-700 transition">Em breve...</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-black text-white text-center p-6 mt-16 text-sm">
+    <p>&copy; 2025 Ligados Church. Todos os direitos reservados.</p>
+  </footer>
+
+  <!-- Notificação Mobile -->
+  <div id="mobile-alert" class="fixed bottom-4 left-4 right-4 bg-yellow-100 text-yellow-800 text-center text-sm p-3 rounded shadow-lg md:hidden hidden">
+    Este site é otimizado para celular. Se algo parecer estranho, entre em contato conosco!
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      if (window.innerWidth < 768) {
+        document.getElementById('mobile-alert').classList.remove('hidden');
+        setTimeout(() => {
+          document.getElementById('mobile-alert').classList.add('hidden');
+        }, 6000);
+      }
+    });
+  </script>
+
+</body>
+</html>

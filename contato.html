@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ligados Church - Contato</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-white text-red-800">
+
+  <!-- Header fixo no topo -->
+<header class="bg-black text-white fixed top-0 left-0 w-full z-50 shadow-md">
+  <nav class="flex items-center justify-center max-w-3xl mx-auto px-4 py-4">
+    <div class="flex items-center space-x-8">
+      <!-- Logo -->
+      <div class="flex items-center space-x-2">
+        <img src="assets/logo-ligadoschurch.png" alt="Logo Ligados Church" class="h-10 md:h-16 w-auto">
+      </div>
+
+      <!-- Menu de navegação -->
+      <ul class="flex space-x-6 text-lg md:text-xl">
+        <li><a href="index.html" class="hover:text-red-500 transition">Início</a></li>
+        <li><a href="eventos.html" class="hover:text-red-500 transition">Eventos</a></li>
+        <li><a href="impacto.html" class="hover:text-red-500 transition">Impacto</a></li>
+        <li><a href="galeria.html" class="hover:text-red-500 transition">Galeria</a></li>
+        <li><a href="contato.html" class="hover:text-red-500 transition">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="mt-20">
+
+    <!-- Formulário de Contato -->
+    <section class="contato px-4 py-8 max-w-3xl mx-auto">
+      <h1 class="text-3xl font-semibold text-black text-center mb-6">Fale Conosco</h1>
+      <form class="space-y-4 bg-black p-6 rounded-lg shadow-lg">
+        <div>
+          <label for="nome" class="block text-sm text-white font-medium">Nome:</label>
+          <input type="text" id="nome" required
+            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600">
+        </div>
+
+        <div>
+          <label for="email" class="block text-sm text-white font-medium">Email:</label>
+          <input type="email" id="email" required
+            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600">
+        </div>
+
+        <div>
+          <label for="mensagem" class="block text-sm text-white font-medium">Mensagem:</label>
+          <textarea id="mensagem" rows="4" required
+            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600"></textarea>
+        </div>
+
+        <button type="submit"
+          class="w-full py-2 px-4 bg-red-500 text-white rounded-lg hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-600">
+          Enviar
+        </button>
+      </form>
+    </section>
+
+    <!-- Informações da Igreja -->
+    <section class="info-igreja px-4 py-8 max-w-3xl mx-auto text-center mt-8 bg-black rounded-lg shadow-lg">
+      <h2 class="text-2xl text-white font-semibold mb-4">Informações da Igreja</h2>
+      <p class="text-white"><strong>Endereço:</strong> Estrada dos Mirandas, 919 – Jardim Maria Duarte, São Paulo/SP</p>
+      <p class="text-white"><strong>Telefone:</strong> (11) 98521-8825</p>
+      <p class="text-white"><strong>Email:</strong> <a href="mailto:ligadoschurch@gmail.com" class="text-white hover:underline">ligadoschurch@gmail.com</a></p>
+    </section>
+
+  </main>
+
+</body>
+
+</html>

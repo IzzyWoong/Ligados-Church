@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ligados Church - Galeria</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .galeria-container img {
+      transition: transform 0.3s ease, opacity 0.3s ease;
+      cursor: pointer;
+    }
+    .galeria-container img:hover {
+      transform: scale(1.05);
+      opacity: 0.9;
+    }
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.9);
+      justify-content: center;
+      align-items: center;
+    }
+    .modal img {
+      max-width: 90%;
+      max-height: 80vh;
+    }
+    .modal.active {
+      display: flex;
+    }
+    .modal-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 2rem;
+      color: white;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 0.5rem;
+      cursor: pointer;
+    }
+    .modal-prev {
+      left: 10px;
+    }
+    .modal-next {
+      right: 10px;
+    }
+  </style>
+</head>
+<body class="bg-white text-red-800">
+
+  <!-- Header fixo no topo -->
+<header class="bg-black text-white fixed top-0 left-0 w-full z-50 shadow-md">
+  <nav class="flex items-center justify-center max-w-3xl mx-auto px-4 py-4">
+    <div class="flex items-center space-x-8">
+      <!-- Logo -->
+      <div class="flex items-center space-x-2">
+        <img src="assets/logo-ligadoschurch.png" alt="Logo Ligados Church" class="h-10 md:h-16 w-auto">
+      </div>
+
+      <!-- Menu de navegação -->
+      <ul class="hidden md:flex space-x-6 text-lg md:text-xl">
+        <li><a href="index.html" class="hover:text-red-500 transition">Início</a></li>
+        <li><a href="eventos.html" class="hover:text-red-500 transition">Eventos</a></li>
+        <li><a href="impacto.html" class="hover:text-red-500 transition">Impacto</a></li>
+        <li><a href="galeria.html" class="hover:text-red-500 transition">Galeria</a></li>
+        <li><a href="contato.html" class="hover:text-red-500 transition">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Galeria -->
+  <main class="pt-32 px-4 max-w-7xl mx-auto">
+    <section class="text-center mb-12">
+      <h2 class="text-4xl font-bold text-black mb-6">Galeria de Momentos</h2>
+      <p class="text-lg text-gray-700">Confira alguns momentos especiais vividos por nossa comunidade.</p>
+    </section>
+
+    <!-- Galeria com 6 imagens principais -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 galeria-container">
+      <img src="assets/impacto1.jpg" alt="Foto 1" class="rounded-xl shadow-lg w-full h-64 object-cover">
+      <img src="assets/impacto2.jpg" alt="Foto 2" class="rounded-xl shadow-lg w-full h-64 object-cover">
+      <img src="assets/impacto3.jpg" alt="Foto 3" class="rounded-xl shadow-lg w-full h-64 object-cover">
+      <img src="assets/impacto3.jpg" alt="Foto 4" class="rounded-xl shadow-lg w-full h-64 object-cover">
+      <img src="assets/impacto3.jpg" alt="Foto 5" class="rounded-xl shadow-lg w-full h-64 object-cover">
+      <img src="assets/impacto3.jpg" alt="Foto 6" class="rounded-xl shadow-lg w-full h-64 object-cover">
+    </div>
+
+  <!-- Modal para imagens -->
+  <div id="modal" class="modal">
+    <span class="modal-nav modal-prev">&#10094;</span>
+    <img id="modal-img" src="" alt="Imagem em destaque">
+    <span class="modal-nav modal-next">&#10095;</span>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-black text-white text-center p-6 mt-16 text-sm">
+    <p>&copy; 2025 Ligados Church. Todos os direitos reservados.</p>
+  </footer>
+
+  <script>
+    const images = document.querySelectorAll('.galeria-container img');
+    const modal = document.getElementById('modal');
+    const modalImg = document.getElementById('modal-img');
+    const prev = document.querySelector('.modal-prev');
+    const next = document.querySelector('.modal-next');
+    let currentIndex = 0;
+
+    images.forEach((img, index) => {
+      img.addEventListener('click', () => {
+        modal.classList.add('active');
+        modalImg.src = img.src;
+        currentIndex = index;
+      });
+    });
+
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal || e.target === modalImg) {
+        modal.classList.remove('active');
+      }
+    });
+
+    prev.addEventListener('click', () => {
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      modalImg.src = images[currentIndex].src;
+    });
+
+    next.addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % images.length;
+      modalImg.src = images[currentIndex].src;
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (!modal.classList.contains('active')) return;
+      if (e.key === 'ArrowLeft') prev.click();
+      if (e.key === 'ArrowRight') next.click();
+      if (e.key === 'Escape') modal.classList.remove('active');
+    });
+  </script>
+
+</body>
+</html>
