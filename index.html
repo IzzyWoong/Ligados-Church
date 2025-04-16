@@ -49,7 +49,6 @@
       <li><a href="eventos.html" class="hover:text-red-500 transition">Eventos</a></li>
       <li><a href="impacto.html" class="hover:text-red-500 transition">Impacto</a></li>
       <li><a href="galeria.html" class="hover:text-red-500 transition">Galeria</a></li>
-      <li><a href="contato.html" class="hover:text-red-500 transition">Contato</a></li>
     </ul>
 
     <!-- Botão do menu mobile -->
@@ -66,12 +65,6 @@
     <a href="eventos.html" class="block hover:text-red-500">Eventos</a>
     <a href="impacto.html" class="block hover:text-red-500">Impacto</a>
     <a href="galeria.html" class="block hover:text-red-500">Galeria</a>
-    <a href="contato.html" class="block hover:text-red-500">Contato</a>
-  </div>
-
-  <!-- Toast de aviso para mobile -->
-  <div id="mobile-toast" class="fixed bottom-6 right-6 bg-black text-white text-sm px-4 py-2 rounded-lg shadow-lg opacity-0 transition-opacity duration-500 pointer-events-none z-50">
-    Acessando via dispositivo móvel
   </div>
 </header>
 
@@ -81,17 +74,17 @@
     <h1 class="text-3xl sm:text-4xl md:text-6xl font-extrabold text-black mb-4">Seja bem-vindo à Ligados Church</h1>
     <p class="text-lg sm:text-xl font-medium text-black">Conectando vidas a Cristo, despertando propósitos, transformando gerações.</p>
     <a href="impacto.html" class="inline-block mt-8 px-6 py-3 bg-red-600 text-white font-semibold rounded-lg hover:bg-red-700 transition shadow-md">
-      Conheça o Impacto!
+      Toque aqui Conheça o IMPACTO!
     </a>
   </section>
 
   <!-- Vídeos -->
   <section class="mt-12">
-    <h2 class="text-3xl md:text-4xl font-bold text-black mb-8 text-center">Confira Nossos Vídeos</h2>
+    <h2 class="text-3xl md:text-4xl font-bold text-black mb-8 text-center">Momentos de Bençãos:</h2>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-4 fade-in-up">
       <!-- Cards de vídeo -->
       <div class="bg-white rounded-lg shadow-lg overflow-hidden transform transition duration-300 hover:scale-105">
-        <video class="w-full h-60 object-cover" muted loop playsinline data-autoplay loading="lazy">
+        <video class="w-full h-80 object-cover" autoplay muted loop playsinline data-autoplay loading="lazy">
           <source src="assets/ligadoschurch-1.mp4" type="video/mp4">
           Seu navegador não suporta o vídeo.
         </video>
@@ -101,7 +94,7 @@
         </div>
       </div>
       <div class="bg-white rounded-lg shadow-lg overflow-hidden transform transition duration-300 hover:scale-105">
-        <video class="w-full h-60 object-cover" muted loop playsinline data-autoplay loading="lazy">
+        <video class="w-full h-80 object-cover" autoplay muted loop playsinline data-autoplay loading="lazy">
           <source src="assets/ligadoschurch-2.mp4" type="video/mp4">
           Seu navegador não suporta o vídeo.
         </video>
@@ -111,7 +104,7 @@
         </div>
       </div>
       <div class="bg-white rounded-lg shadow-lg overflow-hidden transform transition duration-300 hover:scale-105">
-        <video class="w-full h-60 object-cover" muted loop playsinline data-autoplay loading="lazy">
+        <video class="w-full h-80 object-cover" autoplay muted loop playsinline data-autoplay loading="lazy">
           <source src="assets/batismo.mp4" type="video/mp4">
           Seu navegador não suporta o vídeo.
         </video>
@@ -154,40 +147,25 @@
   </a>
 </div>
 
-<footer class="bg-black text-white text-center p-6 mt-16 text-sm">
+<!-- Informações da Igreja -->
+<section class="info-igreja px-4 py-8 max-w-3xl mx-auto text-center mt-8 bg-black rounded-lg shadow-lg">
+  <h2 class="text-2xl text-white font-semibold mb-4">Ajude em nossa Missão: Pix Para Doação</h2>
+  <p class="text-white"><strong>E-mail e Chave Pix:</strong> ligadoschurch@gmail.com</p>
+  <p class="text-white"><strong>Endereço:</strong> Estrada dos Mirandas, 919 – Jardim Maria Duarte, São Paulo/SP</p>
+  <p class="text-white"><strong>Telefone:</strong> (11) 98521-8825</p>
+</section>
+
+<!-- Rodapé -->
+<footer class="bg-black text-white text-center py-8 mt-12">
   <p>&copy; 2025 Ligados Church. Todos os direitos reservados.</p>
 </footer>
 
 <script>
-  function scrollCarousel(direction) {
-    const carousel = document.getElementById('carousel');
-    const scrollAmount = 400;
-    carousel.scrollBy({ left: scrollAmount * direction, behavior: 'smooth' });
-  }
-
-  document.addEventListener('DOMContentLoaded', function () {
-    if (window.innerWidth < 768) {
-      const toast = document.getElementById('mobile-toast');
-      toast.classList.remove('opacity-0');
-      toast.classList.add('opacity-100');
-      setTimeout(() => {
-        toast.classList.remove('opacity-100');
-        toast.classList.add('opacity-0');
-      }, 4000);
-    }
-
-    // autoplay nos vídeos
-    document.querySelectorAll('video[data-autoplay]').forEach(video => {
-      video.muted = true;
-      video.play().catch(err => console.error('Erro ao reproduzir vídeo:', err));
-    });
-
-    // Toggle menu mobile
-    const menuToggle = document.getElementById('menu-toggle');
-    const mobileMenu = document.getElementById('mobile-menu');
-    menuToggle.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-    });
+  // Script para o menu mobile
+  const menuToggle = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  menuToggle.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
   });
 </script>
 
