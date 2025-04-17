@@ -200,4 +200,54 @@
 
 <script src="js/scripts.js"></script>
 </body>
+
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "firebase/app";
+  import { getAnalytics } from "firebase/analytics";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+  
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyDEpHMXfbZZLP0njvUGvifIQ3wNagMyy5U",
+    authDomain: "ligados-church.firebaseapp.com",
+    projectId: "ligados-church",
+    storageBucket: "ligados-church.firebasestorage.app",
+    messagingSenderId: "583971330111",
+    appId: "1:583971330111:web:2e71cba77ced7defbec08a",
+    measurementId: "G-P5H6L9TLFG"
+  };
+  
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+  const form = document.getElementById("form-voluntario");
+  
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+  
+      const nome = document.getElementById("nome").value;
+      const email = document.getElementById("email").value;
+      const telefone = document.getElementById("telefone").value;
+      const motivacao = document.getElementById("motivacao").value;
+  
+      try {
+        await addDoc(collection(db, "voluntarios"), {
+          nome,
+          email,
+          telefone,
+          motivacao,
+          data: new Date()
+        });
+        alert("Cadastro enviado com sucesso!");
+        form.reset();
+      } catch (err) {
+        console.error("Erro ao salvar", err);
+        alert("Erro ao enviar cadastro.");
+      }
+    });
+  </script>
+  
 </html>
