@@ -1,28 +1,56 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <title>Inscrição Enviada</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://cdn.tailwindcss.com"></script>
-  
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-D2LHXR7J4H"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <title>Obrigado!</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Montserrat', sans-serif;
+      background-color: #0d0d0d;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      height: 100vh;
+      text-align: center;
+    }
 
-  gtag('config', 'G-D2LHXR7J4H');
-</script>
+    h1 {
+      font-size: 2.5rem;
+      color: #ff0000;
+      margin-bottom: 0.5rem;
+    }
 
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+    }
+
+    a {
+      display: inline-block;
+      padding: 0.8rem 1.5rem;
+      background-color: #ff0000;
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      border-radius: 8px;
+      transition: background-color 0.3s ease;
+    }
+
+    a:hover {
+      background-color: #cc0000;
+    }
+  </style>
 </head>
-<body class="bg-white text-gray-800 flex items-center justify-center min-h-screen">
-  <div class="text-center p-8 rounded-lg shadow-lg bg-green-100 max-w-md mx-auto">
-    <h1 class="text-3xl font-bold text-green-700 mb-4">Inscrição enviada com sucesso!</h1>
-    <p class="text-lg text-green-800 mb-4">Obrigado por se inscrever no <strong>Impacto</strong> da Ligados Church.</p>
-    <p class="text-md text-gray-700">Nosso time entrará em contato em breve via WhatsApp com as próximas orientações.</p>
-    <a href="index.html" class="inline-block mt-6 px-6 py-3 bg-green-600 text-white rounded hover:bg-green-700 transition">Voltar para o início</a>
-  </div>
+<body>
+  <h1>Obrigado pelo envio! 🙌</h1>
+  <p>Recebemos seus dados com sucesso.<br>
+  Entraremos em contato em breve.</p>
+  <a href="index.html">Voltar para a página inicial</a>
 </body>
 </html>
