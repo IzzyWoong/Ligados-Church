@@ -118,14 +118,20 @@
       </div>
   
       <div>
-        <label class="block font-medium text-gray-700 mb-2" for="documentos">RG *</label>
-        <input required type="text" id="documentos" name="RG e CPF" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-red-500">
-      </div>
+        <label class="block font-medium text-gray-700 mb-2" for="rg">RG *</label>
+        <input required type="text" id="rg" name="RG" pattern="\d{1,9}" maxlength="9"
+               oninput="this.value = this.value.replace(/\D/g, '')"
+               title="Digite apenas números do RG (máx. 9 dígitos)"
+               class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-red-500">
+      </div>      
   
       <div>
-        <label class="block font-medium text-gray-700 mb-2" for="documentos">CPF *</label>
-        <input required type="text" id="documentos" name="RG e CPF" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-red-500">
-      </div>
+        <label class="block font-medium text-gray-700 mb-2" for="cpf">CPF *</label>
+        <input required type="text" id="cpf" name="CPF" pattern="\d{11}" maxlength="11"
+               oninput="this.value = this.value.replace(/\D/g, '')"
+               title="Digite os 11 números do CPF sem pontos ou traços"
+               class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-red-500">
+      </div>      
 
       <div>
         <label class="block font-medium text-gray-700 mb-2" for="endereco">Endereço completo *</label>
@@ -139,8 +145,11 @@
   
       <div>
         <label class="block font-medium text-gray-700 mb-2" for="telefone">Telefone (WhatsApp) *</label>
-        <input required type="tel" id="telefone" name="Telefone (WhatsApp)" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-red-500">
-      </div>
+        <input required type="tel" id="telefone" name="Telefone (WhatsApp)" pattern="\d{11}" maxlength="11"
+               oninput="this.value = this.value.replace(/\D/g, '')"
+               title="Digite o número com DDD (ex: 11999999999)"
+               class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-red-500">
+      </div>      
   
       <div>
         <label class="block font-medium text-gray-700 mb-2" for="telefoneResponsavel">Tamanho da sua camisa: P, M, G, GG, Outro *</label>
@@ -154,8 +163,11 @@
   
       <div>
         <label class="block font-medium text-gray-700 mb-2" for="telefoneResponsavel">Telefone do responsável de confiança *</label>
-        <input required type="tel" id="telefoneResponsavel" name="Telefone do responsável de confiança" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-red-500">
-      </div>
+        <input required type="tel" id="telefoneResponsavel" name="Telefone do responsável de confiança" pattern="\d{11}" maxlength="11"
+               oninput="this.value = this.value.replace(/\D/g, '')"
+               title="Digite o número com DDD (ex: 11999999999)"
+               class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-red-500">
+      </div>      
   
       <div>
         <label class="block font-medium text-gray-700 mb-2" for="restricoes">Possui alguma restrição alimentar? Se sim, qual? *</label>
