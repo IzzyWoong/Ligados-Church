@@ -180,6 +180,28 @@
     </form>
   </section>
   
+  <script>
+    const form = document.getElementById('ligadosForm');
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+  
+      const formData = new FormData(form);
+      const data = new URLSearchParams(formData);
+  
+      try {
+        await fetch("https://script.google.com/macros/s/AKfycbySsuxxwV0V49NAxC2liI7hWtH0iaHaoiqjsVsLnBVX1EDfb1QsbY2IjbT6Rw8t5uY3/exec", {
+          method: "POST",
+          body: data,
+        });
+        alert("Mensagem enviada com sucesso!");
+        form.reset();
+      } catch (error) {
+        alert("Erro ao enviar. Tente novamente.");
+        console.error(error);
+      }
+    });
+  </script>
+
   <section id="impacto" class="text-center mb-16">
     <!-- Conteúdo da seção -->
   </section>
