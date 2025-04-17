@@ -21,6 +21,10 @@
 </head>
 <body class="bg-white text-gray-800">
 
+  <button onclick="window.scrollTo({ top: 0, behavior: 'smooth' });" class="fixed bottom-4 right-4 bg-red-600 text-white p-3 rounded-full shadow-lg">
+    ↑
+  </button>
+
 <!-- Header fixo no topo -->
 <header class="bg-black text-white fixed top-0 left-0 w-full z-50 shadow-md">
   <nav class="flex items-center justify-center max-w-3xl mx-auto px-4 py-4">
@@ -99,10 +103,15 @@
       </div>
   
       <div>
-        <label class="block font-medium text-gray-700 mb-2" for="documentos">RG e CPF separados *</label>
+        <label class="block font-medium text-gray-700 mb-2" for="documentos">RG *</label>
         <input required type="text" id="documentos" name="RG e CPF" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-red-500">
       </div>
   
+      <div>
+        <label class="block font-medium text-gray-700 mb-2" for="documentos">CPF *</label>
+        <input required type="text" id="documentos" name="RG e CPF" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-red-500">
+      </div>
+
       <div>
         <label class="block font-medium text-gray-700 mb-2" for="endereco">Endereço completo *</label>
         <input required type="text" id="endereco" name="Endereço completo" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-red-500">
@@ -118,6 +127,11 @@
         <input required type="tel" id="telefone" name="Telefone (WhatsApp)" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-red-500">
       </div>
   
+      <div>
+        <label class="block font-medium text-gray-700 mb-2" for="telefoneResponsavel">Tamanho da sua camisa: P, M, G, GG, Outro *</label>
+        <input required type="tel" id="telefoneResponsavel" name="Telefone do responsável de confiança" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-red-500">
+      </div>
+
       <div>
         <label class="block font-medium text-gray-700 mb-2" for="responsavel">Nome do responsável de confiança *</label>
         <input required type="text" id="responsavel" name="Nome do responsável de confiança" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-red-500">
@@ -144,9 +158,15 @@
       </div>
   
       <div class="text-center">
-        <button type="submit" class="bg-red-600 text-white px-8 py-3 rounded-md hover:bg-red-700 transition">Enviar</button>
+        <button type="submit" class="bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-6 rounded-lg w-full transition">
+          Enviar inscrição
+        </button>        
       </div>
     </form>
+  </section>
+  
+  <section id="impacto" class="text-center mb-16">
+    <!-- Conteúdo da seção -->
   </section>
   
   
